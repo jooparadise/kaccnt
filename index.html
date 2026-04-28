@@ -3,510 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>18th Annual Outstanding Police Award & Scholarship | KACCNT</title>
+<title>제18회 경찰관 시상식 & 장학금 | KACCNT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Noto+Sans+KR:wght@300;400;700&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0a1628;--navy2:#0f2044;--gold:#c9a84c;--gold2:#f0c96e;--cyan:#00c8e8;--white:#f8f6f0;--light:#e8e4d8}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Noto Sans KR',sans-serif;overflow-x:hidden}
 
-  :root {
-    --navy: #0a1628;
-    --navy2: #0f2044;
-    --gold: #c9a84c;
-    --gold2: #f0c96e;
-    --cyan: #00c8e8;
-    --red: #e84040;
-    --white: #f8f6f0;
-    --light: #e8e4d8;
-  }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,0.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,0.12)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:3px;color:var(--gold);white-space:nowrap}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.lang-pill{display:flex;border:1.5px solid rgba(201,168,76,0.4);border-radius:20px;overflow:hidden}
+.lang-btn{padding:5px 14px;font-size:11px;letter-spacing:1.5px;font-weight:700;text-decoration:none;transition:background .2s,color .2s;color:rgba(255,255,255,0.45);cursor:pointer;border:none;background:none;font-family:'Noto Sans KR',sans-serif}
+.lang-btn.active{background:var(--gold);color:var(--navy)}
+.lang-btn:not(.active):hover{color:var(--gold)}
+@media(max-width:700px){.nav-links{display:none}nav{padding:13px 18px}.nav-logo{font-size:13px}}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 30%,#12265a 0%,var(--navy) 70%);z-index:0}
+.brush{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;animation:drift 8s ease-in-out infinite alternate;z-index:0}
+.brush1{width:500px;height:200px;background:#00c8e8;top:-60px;left:-120px;animation-delay:0s}
+.brush2{width:400px;height:180px;background:#e84040;top:-40px;right:-80px;animation-delay:2s}
+.brush3{width:300px;height:150px;background:#f5c842;bottom:80px;left:10%;animation-delay:1s}
+.brush4{width:350px;height:160px;background:#8b3fff;bottom:60px;right:5%;animation-delay:3s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(20px,15px) scale(1.08)}}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.badge{display:inline-block;border:1.5px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 20px;border-radius:2px;margin-bottom:28px;animation:fadeUp .8s ease both}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,9vw,108px);line-height:.92;letter-spacing:2px;animation:fadeUp .8s .15s ease both}
+.hero h1 span{color:var(--gold2);display:block}
+.hero-sub{margin-top:20px;font-size:14px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;animation:fadeUp .8s .25s ease both}
+.hero-meta{margin-top:40px;display:flex;gap:48px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .35s ease both}
+.meta-label{font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.meta-value{font-family:'DM Serif Display',serif;font-size:22px;line-height:1.2}
+.meta-value small{display:block;font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--light);margin-top:3px}
+.hero-divider{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);margin:40px auto 0;animation:fadeUp .8s .45s ease both}
+.cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px;animation:fadeUp .8s .5s ease both}
+.btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{border:1.5px solid var(--white);color:var(--white);font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;text-decoration:none;transition:border-color .2s,color .2s,transform .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-  body {
-    background: var(--navy);
-    color: var(--white);
-    font-family: 'Noto Sans KR', sans-serif;
-    overflow-x: hidden;
-  }
+/* COMMON */
+section{padding:100px 24px}
+.container{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);line-height:1.1;margin-bottom:24px}
+.section-title em{font-style:italic;color:var(--gold2)}
 
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 24px 80px;
-    overflow: hidden;
-  }
+/* MISSION */
+.mission{background:var(--navy2)}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:768px){.mission-grid{grid-template-columns:1fr;gap:40px}}
+.mission-body p{font-size:16px;line-height:1.9;color:var(--light);margin-bottom:20px}
+.mission-body p strong{color:var(--gold2)}
+.mission-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.stat-box{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);padding:36px 28px;text-align:center;transition:border-color .3s}
+.stat-box:hover{border-color:var(--gold)}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--gold2);line-height:1}
+.stat-label{font-size:12px;color:var(--light);letter-spacing:1px;margin-top:6px}
 
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 70% at 50% 30%, #12265a 0%, var(--navy) 70%);
-    z-index: 0;
-  }
+/* VIDEO */
+.video-section{background:#060f1e;padding:80px 24px}
+.video-wrap{max-width:860px;margin:48px auto 0}
+.video-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:2px solid rgba(201,168,76,.3);box-shadow:0 0 80px rgba(0,200,232,.12)}
+.video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 
-  /* animated brush strokes */
-  .brush {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.35;
-    animation: drift 8s ease-in-out infinite alternate;
-    z-index: 0;
-  }
-  .brush1 { width: 500px; height: 200px; background: #00c8e8; top: -60px; left: -120px; animation-delay: 0s; }
-  .brush2 { width: 400px; height: 180px; background: #e84040; top: -40px; right: -80px; animation-delay: 2s; }
-  .brush3 { width: 300px; height: 150px; background: #f5c842; bottom: 80px; left: 10%; animation-delay: 1s; }
-  .brush4 { width: 350px; height: 160px; background: #8b3fff; bottom: 60px; right: 5%; animation-delay: 3s; }
+/* RECOGNITION */
+.recognition-section{background:var(--navy)}
+.recognition-intro{max-width:700px;font-size:15px;line-height:1.9;color:var(--light);margin-bottom:48px}
+.recognition-intro strong{color:var(--gold2)}
+.tier-legend{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.tier-legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--light)}
+.sponsor-tier-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px}
+.dot-platinum{background:var(--gold2)}
+.dot-gold{background:#c8a820}
+.dot-silver{background:var(--cyan)}
+.dot-bronze{background:#cd7f32}
+.sponsors-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:2px;margin-bottom:52px}
+.sponsor-entry{padding:22px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);transition:background .3s,border-color .3s;position:relative;overflow:hidden}
+.sponsor-entry::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .3s}
+.sponsor-entry:hover{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.3)}
+.sponsor-entry:hover::before{opacity:1}
+.sponsor-biz-name{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
+.sponsor-biz-type{font-size:11px;color:rgba(255,255,255,.4)}
+.recognition-quote{background:rgba(201,168,76,.06);border-left:3px solid var(--gold);padding:32px 40px;max-width:760px;margin:0 auto;text-align:center}
+.recognition-quote p{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;line-height:1.7;color:var(--light)}
+.recognition-quote cite{display:block;margin-top:16px;font-size:12px;letter-spacing:2px;color:var(--gold);font-style:normal}
 
-  @keyframes drift {
-    from { transform: translate(0, 0) scale(1); }
-    to   { transform: translate(20px, 15px) scale(1.08); }
-  }
+/* SPONSORSHIP */
+.sponsorship{background:var(--navy2)}
+.sponsor-intro{max-width:660px;font-size:15px;line-height:1.9;color:var(--light);margin-bottom:64px}
+.sponsor-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:2px}
+.tier-card{position:relative;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:48px 34px;transition:transform .3s,border-color .3s,box-shadow .3s;overflow:hidden}
+.tier-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tier-card:hover{transform:translateY(-6px)}
+.tier-platinum{border-color:rgba(201,168,76,.4)}.tier-platinum::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}.tier-platinum:hover{border-color:var(--gold);box-shadow:0 24px 60px rgba(201,168,76,.15)}
+.tier-gold{border-color:rgba(240,201,110,.3)}.tier-gold::before{background:linear-gradient(90deg,#b8860b,#f0c96e)}.tier-gold:hover{border-color:var(--gold2);box-shadow:0 24px 60px rgba(240,201,110,.12)}
+.tier-silver{border-color:rgba(0,200,232,.25)}.tier-silver::before{background:linear-gradient(90deg,#007da0,var(--cyan))}.tier-silver:hover{border-color:var(--cyan);box-shadow:0 24px 60px rgba(0,200,232,.12)}
+.tier-bronze{border-color:rgba(255,255,255,.12)}.tier-bronze::before{background:linear-gradient(90deg,#6b3a1f,#cd7f32)}.tier-bronze:hover{border-color:#cd7f32}
+.tier-badge{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:3px;margin-bottom:12px;opacity:.7}
+.tier-name{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:6px}
+.tier-price{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;margin-bottom:24px;color:var(--gold2)}
+.tier-price span{font-size:28px;vertical-align:super}
+.tier-divider{width:40px;height:1px;background:rgba(255,255,255,.2);margin-bottom:24px}
+.tier-features{list-style:none}
+.tier-features li{font-size:13px;color:var(--light);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.tier-features li::before{content:'✦';color:var(--gold);font-size:10px;flex-shrink:0;margin-top:2px}
+.tier-featured{position:absolute;top:20px;right:20px;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px}
 
-  .hero-content { position: relative; z-index: 1; max-width: 900px; }
+/* WHY */
+.why-section{background:linear-gradient(135deg,#0d1e40 0%,#0a1628 100%)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;margin-top:56px}
+.why-card{padding:40px 30px;border-left:3px solid var(--gold);background:rgba(255,255,255,.02);transition:background .3s}
+.why-card:hover{background:rgba(255,255,255,.05)}
+.why-icon{font-size:36px;margin-bottom:20px}
+.why-title{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px}
+.why-body{font-size:14px;line-height:1.8;color:var(--light)}
 
-  .badge {
-    display: inline-block;
-    border: 1.5px solid var(--gold);
-    color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 6px 20px;
-    border-radius: 2px;
-    margin-bottom: 28px;
-    font-family: 'Noto Sans KR', sans-serif;
-    animation: fadeUp 0.8s ease both;
-  }
+/* PARTNERS */
+.partners-section{background:var(--navy2);padding:80px 24px}
+.partners-title{font-size:12px;letter-spacing:3px;color:rgba(255,255,255,.4);text-align:center;text-transform:uppercase;margin-bottom:48px}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:18px;max-width:1100px;margin:0 auto}
+.partner-card{display:flex;flex-direction:column;align-items:center;gap:12px;padding:26px 14px 20px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:border-color .3s,background .3s,transform .3s}
+.partner-card:hover{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.05);transform:translateY(-4px)}
+.partner-logo{width:76px;height:76px;flex-shrink:0}
+.partner-name{font-size:11px;color:var(--light);text-align:center;line-height:1.6}
+.partner-name strong{display:block;color:var(--white);font-size:12px;margin-bottom:1px}
 
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 110px);
-    line-height: 0.92;
-    letter-spacing: 2px;
-    color: var(--white);
-    animation: fadeUp 0.8s 0.15s ease both;
-  }
-  .hero h1 span { color: var(--gold2); display: block; }
+/* CTA */
+.cta-final{background:var(--gold);color:var(--navy);text-align:center;padding:100px 24px}
+.cta-final .section-title{color:var(--navy);margin-bottom:20px}
+.cta-final p{font-size:16px;max-width:600px;margin:0 auto 40px;line-height:1.8}
+.btn-dark{background:var(--navy);color:var(--white);font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:18px 44px;border:none;cursor:pointer;transition:background .2s,transform .2s;display:inline-block;text-decoration:none;margin:8px}
+.btn-dark:hover{background:#1a3060;transform:translateY(-2px)}
 
-  .hero-sub {
-    margin-top: 20px;
-    font-size: 14px;
-    letter-spacing: 4px;
-    color: var(--cyan);
-    text-transform: uppercase;
-    animation: fadeUp 0.8s 0.25s ease both;
-  }
-
-  .hero-meta {
-    margin-top: 40px;
-    display: flex;
-    gap: 48px;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.35s ease both;
-  }
-  .meta-item { text-align: center; }
-  .meta-label { font-size: 10px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
-  .meta-value { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1.2; }
-  .meta-value small { display: block; font-family: 'Noto Sans KR', sans-serif; font-size: 12px; color: var(--light); margin-top: 3px; }
-
-  .hero-divider {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    margin: 40px auto 0;
-    animation: fadeUp 0.8s 0.45s ease both;
-  }
-
-  .cta-group {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 32px;
-    animation: fadeUp 0.8s 0.5s ease both;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--navy);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 16px 36px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
-  .btn-outline {
-    border: 1.5px solid var(--white);
-    color: var(--white);
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 15px 32px;
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── SECTION COMMON ── */
-  section { padding: 100px 24px; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-eyebrow {
-    font-size: 10px;
-    letter-spacing: 4px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 56px);
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
-  .section-title em { font-style: italic; color: var(--gold2); }
-
-  /* ── MISSION ── */
-  .mission { background: var(--navy2); }
-  .mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  @media(max-width: 768px) { .mission-grid { grid-template-columns: 1fr; gap: 40px; } }
-
-  .mission-body p {
-    font-size: 16px;
-    line-height: 1.9;
-    color: var(--light);
-    margin-bottom: 20px;
-  }
-  .mission-body p strong { color: var(--gold2); }
-
-  .mission-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-  }
-  .stat-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,168,76,0.2);
-    padding: 36px 28px;
-    text-align: center;
-    transition: border-color 0.3s;
-  }
-  .stat-box:hover { border-color: var(--gold); }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    color: var(--gold2);
-    line-height: 1;
-  }
-  .stat-label { font-size: 12px; color: var(--light); letter-spacing: 1px; margin-top: 6px; }
-
-  /* ── VIDEO ── */
-  .video-section { background: #060f1e; padding: 80px 24px; }
-  .video-wrap {
-    max-width: 860px;
-    margin: 48px auto 0;
-    position: relative;
-  }
-  .video-frame {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border: 2px solid rgba(201,168,76,0.3);
-    box-shadow: 0 0 80px rgba(0,200,232,0.12), 0 0 0 1px rgba(201,168,76,0.1);
-  }
-  .video-frame iframe {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-  }
-  .video-caption {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 13px;
-    color: var(--light);
-    letter-spacing: 1px;
-  }
-
-  /* ── SPONSORSHIP ── */
-  .sponsorship { background: var(--navy); }
-  .sponsor-intro {
-    max-width: 660px;
-    font-size: 15px;
-    line-height: 1.9;
-    color: var(--light);
-    margin-bottom: 64px;
-  }
-
-  .sponsor-tiers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2px;
-  }
-
-  .tier-card {
-    position: relative;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 48px 36px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-  }
-  .tier-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
-  .tier-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  }
-
-  .tier-platinum { border-color: rgba(201,168,76,0.4); }
-  .tier-platinum::before { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
-  .tier-platinum:hover { border-color: var(--gold); box-shadow: 0 24px 60px rgba(201,168,76,0.15); }
-
-  .tier-gold { border-color: rgba(240,201,110,0.3); }
-  .tier-gold::before { background: linear-gradient(90deg, #b8860b, #f0c96e); }
-  .tier-gold:hover { border-color: var(--gold2); box-shadow: 0 24px 60px rgba(240,201,110,0.12); }
-
-  .tier-silver { border-color: rgba(0,200,232,0.25); }
-  .tier-silver::before { background: linear-gradient(90deg, #007da0, var(--cyan)); }
-  .tier-silver:hover { border-color: var(--cyan); box-shadow: 0 24px 60px rgba(0,200,232,0.12); }
-
-  .tier-bronze { border-color: rgba(255,255,255,0.12); }
-  .tier-bronze::before { background: linear-gradient(90deg, #6b3a1f, #cd7f32); }
-  .tier-bronze:hover { border-color: #cd7f32; box-shadow: 0 24px 60px rgba(205,127,50,0.1); }
-
-  .tier-badge {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin-bottom: 12px;
-    opacity: 0.7;
-  }
-  .tier-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    margin-bottom: 6px;
-  }
-  .tier-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
-    line-height: 1;
-    margin-bottom: 24px;
-    color: var(--gold2);
-  }
-  .tier-price span { font-size: 28px; vertical-align: super; }
-  .tier-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 24px; }
-  .tier-features { list-style: none; }
-  .tier-features li {
-    font-size: 13px;
-    color: var(--light);
-    padding: 7px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.5;
-  }
-  .tier-features li::before {
-    content: '✦';
-    color: var(--gold);
-    font-size: 10px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .tier-featured {
-    position: absolute;
-    top: 20px; right: 20px;
-    background: var(--gold);
-    color: var(--navy);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-  }
-
-  /* ── WHY SPONSOR ── */
-  .why-section { background: linear-gradient(135deg, #0d1e40 0%, #0a1628 100%); }
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-top: 56px;
-  }
-  .why-card {
-    padding: 40px 32px;
-    border-left: 3px solid var(--gold);
-    background: rgba(255,255,255,0.02);
-    transition: background 0.3s;
-  }
-  .why-card:hover { background: rgba(255,255,255,0.05); }
-  .why-icon { font-size: 36px; margin-bottom: 20px; }
-  .why-title { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px; }
-  .why-body { font-size: 14px; line-height: 1.8; color: var(--light); }
-
-  /* ── PARTNERS ── */
-  .partners-section { background: var(--navy2); padding: 60px 24px; }
-  .partners-title { font-size: 12px; letter-spacing: 3px; color: rgba(255,255,255,0.4); text-align: center; text-transform: uppercase; margin-bottom: 32px; }
-  .partners-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .partner-tag {
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 10px 20px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: var(--light);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .partner-tag:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* ── CTA FINAL ── */
-  .cta-final {
-    background: var(--gold);
-    color: var(--navy);
-    text-align: center;
-    padding: 100px 24px;
-  }
-  .cta-final .section-title { color: var(--navy); margin-bottom: 20px; }
-  .cta-final p { font-size: 16px; max-width: 600px; margin: 0 auto 40px; line-height: 1.8; }
-  .btn-dark {
-    background: var(--navy);
-    color: var(--white);
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 18px 48px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    display: inline-block;
-    text-decoration: none;
-    margin: 8px;
-  }
-  .btn-dark:hover { background: #1a3060; transform: translateY(-2px); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #050e1c;
-    padding: 48px 24px;
-    text-align: center;
-  }
-  footer .logo-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  footer p { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(10,22,40,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 3px;
-    color: var(--gold);
-  }
-  .nav-links { display: flex; gap: 32px; }
-  .nav-links a {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  @media(max-width: 600px) { .nav-links { display: none; } nav { padding: 16px 20px; } }
-
+/* FOOTER */
+footer{background:#050e1c;padding:48px 24px;text-align:center}
+footer .logo-text{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;color:var(--gold);margin-bottom:12px}
+footer p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.8}
+footer a{color:var(--gold);text-decoration:none}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">KACCNT · 제18회 경찰관 시상식</div>
-  <div class="nav-links">
-    <a href="#mission">행사소개</a>
-    <a href="#video">작년영상</a>
-    <a href="#sponsor">스폰서</a>
-    <a href="#contact">문의</a>
+  <div class="nav-logo" id="nav-logo">KACCNT · 제18회 경찰관 시상식</div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#mission" id="nav-mission">행사소개</a>
+      <a href="#video" id="nav-video">작년영상</a>
+      <a href="#recognition" id="nav-recognition">역대스폰서</a>
+      <a href="#sponsor" id="nav-sponsor">스폰서</a>
+      <a href="#contact" id="nav-contact">문의</a>
+    </div>
+    <div class="lang-pill">
+      <button class="lang-btn active" id="btn-ko" onclick="setLang('ko')">한국어</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">ENG</button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="brush brush1"></div>
-  <div class="brush brush2"></div>
-  <div class="brush brush3"></div>
-  <div class="brush brush4"></div>
-
+  <div class="brush brush1"></div><div class="brush brush2"></div>
+  <div class="brush brush3"></div><div class="brush brush4"></div>
   <div class="hero-content">
     <div class="badge">Korean American Chamber of Commerce North Texas</div>
     <h1>18th Annual<span>Outstanding Police</span>Award & Scholarship</h1>
     <p class="hero-sub">Strengthen North Texas Police Network & Scholarship Award</p>
-
     <div class="hero-meta">
       <div class="meta-item">
-        <div class="meta-label">날짜 · Date</div>
+        <div class="meta-label" id="h-date-label">날짜 · Date</div>
         <div class="meta-value">June 11, 2026<small>Networking 10:30 AM · Ceremony 11:00 AM</small></div>
       </div>
       <div class="meta-item">
-        <div class="meta-label">장소 · Venue</div>
+        <div class="meta-label" id="h-venue-label">장소 · Venue</div>
         <div class="meta-value">Sura Korean Restaurant<small>2240 Royal Ln #106, Dallas, TX 75229</small></div>
       </div>
     </div>
-
     <div class="hero-divider"></div>
-
     <div class="cta-group">
-      <a href="#sponsor" class="btn-primary">스폰서 참여하기</a>
-      <a href="#video" class="btn-outline">작년 행사 보기</a>
+      <a href="#sponsor" class="btn-primary" id="h-cta1">스폰서 참여하기</a>
+      <a href="#video" class="btn-outline" id="h-cta2">작년 행사 보기</a>
     </div>
   </div>
 </section>
@@ -516,65 +204,75 @@
   <div class="container">
     <div class="mission-grid">
       <div>
-        <div class="section-eyebrow">우리의 사명 · Our Mission</div>
-        <h2 class="section-title">지역 사회를<br><em>지키는 이들을</em><br>위하여</h2>
+        <div class="section-eyebrow" id="m-eyebrow">우리의 사명 · Our Mission</div>
+        <h2 class="section-title" id="m-title">지역 사회를<br><em>지키는 이들을</em><br>위하여</h2>
       </div>
       <div class="mission-body">
-        <p>북텍사스 한인상공회의소(KACCNT)는 지역 사회의 안전을 위해 헌신하는 경찰관들에게 감사를 전하고, <strong>그들의 자녀들에게 장학금을 수여</strong>하기 위해 매년 이 행사를 개최합니다.</p>
-        <p>제18회를 맞이하는 올해 행사는 Dallas, Carrollton, Frisco, Coppell, Lewisville 경찰서와 함께 진행되며, 한인 커뮤니티와 법 집행 기관 사이의 <strong>특별한 연대</strong>를 이어갑니다.</p>
-        <p>스폰서로 참여하시면 단순한 기부를 넘어, 당신의 비즈니스를 <strong>수백 명의 지역 리더와 경찰 지휘관 앞에 직접 소개</strong>하는 기회를 갖게 됩니다.</p>
+        <p id="m-p1">북텍사스 한인상공회의소(KACCNT)는 지역 사회의 안전을 위해 헌신하는 경찰관들에게 감사를 전하고, <strong>그들의 자녀들에게 장학금을 수여</strong>하기 위해 매년 이 행사를 개최합니다.</p>
+        <p id="m-p2">제18회를 맞이하는 올해 행사는 Dallas, Carrollton, Frisco, Coppell, Lewisville, Haltom City 경찰서와 함께 진행되며, 한인 커뮤니티와 법 집행 기관 사이의 <strong>특별한 연대</strong>를 이어갑니다.</p>
+        <p id="m-p3">스폰서로 참여하시면 단순한 기부를 넘어, 당신의 비즈니스를 <strong>수백 명의 지역 리더와 경찰 지휘관 앞에 직접 소개</strong>하는 기회를 갖게 됩니다.</p>
       </div>
     </div>
-
-    <div class="mission-stats" style="margin-top:64px;">
-      <div class="stat-box">
-        <div class="stat-num">18</div>
-        <div class="stat-label">Years of Service</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Police Departments</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Attendees Expected</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Community Impact</div>
-      </div>
+    <div class="mission-stats" style="margin-top:64px">
+      <div class="stat-box"><div class="stat-num">18</div><div class="stat-label" id="s1">Years of Service</div></div>
+      <div class="stat-box"><div class="stat-num">6</div><div class="stat-label" id="s2">협력 경찰서</div></div>
+      <div class="stat-box"><div class="stat-num">200+</div><div class="stat-label" id="s3">예상 참석자</div></div>
+      <div class="stat-box"><div class="stat-num">∞</div><div class="stat-label" id="s4">커뮤니티 임팩트</div></div>
     </div>
   </div>
 </section>
 
 <!-- VIDEO -->
 <section class="video-section" id="video">
-  <div class="container" style="text-align:center;">
+  <div class="container" style="text-align:center">
     <div class="section-eyebrow">2025 Highlight</div>
-    <h2 class="section-title" style="margin-bottom:0;">작년 행사를<br><em>직접 확인하세요</em></h2>
-    <p style="margin-top:16px; color:var(--light); font-size:14px; line-height:1.8;">
-      제17회 행사의 감동적인 순간들 — 수상의 기쁨, 장학금 전달, 그리고<br>
-      한인 커뮤니티와 경찰이 함께 만들어낸 따뜻한 연대의 현장을 담았습니다.
-    </p>
+    <h2 class="section-title" id="v-title">작년 행사를<br><em>직접 확인하세요</em></h2>
+    <p style="margin-top:16px;color:var(--light);font-size:14px;line-height:1.8" id="v-body">제17회 행사의 감동적인 순간들 — 수상의 기쁨, 장학금 전달, 그리고<br>한인 커뮤니티와 경찰이 함께 만들어낸 따뜻한 연대의 현장을 담았습니다.</p>
     <div class="video-wrap">
       <div class="video-frame">
-        <!-- 2025 scholarship award page embed -->
-        <iframe
-          src="https://www.youtube.com/embed/gy7edgyfwqc"
-          title="2025 17th Annual Police Scholarship Award - KACCNT"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/gy7edgyfwqc" title="2025 17th Annual Police Scholarship Award - KACCNT" allowfullscreen loading="lazy"></iframe>
       </div>
-      <p class="video-caption">
-        👉 전체 행사 내용은 
-        <a href="https://koreanchamber.org/scholarship-award/2025-scholarship-award/" 
-           target="_blank" 
-           style="color:var(--gold); text-decoration:none;">
-          koreanchamber.org
-        </a>
-        에서도 확인하실 수 있습니다
+      <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--light)">
+        👉 <span id="v-link-pre">전체 행사 내용은</span>
+        <a href="https://koreanchamber.org/scholarship-award/2025-scholarship-award/" target="_blank" style="color:var(--gold);text-decoration:none">koreanchamber.org</a>
+        <span id="v-link-post">에서도 확인하실 수 있습니다</span>
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- PAST SPONSORS RECOGNITION -->
+<section class="recognition-section" id="recognition">
+  <div class="container">
+    <div class="section-eyebrow" id="r-eyebrow">함께해주신 분들 · Past Sponsors</div>
+    <h2 class="section-title" id="r-title">이분들이 먼저<br><em>함께하셨습니다</em></h2>
+    <p class="recognition-intro" id="r-intro">지난 행사에서 스폰서로 참여해 주신 기업과 개인들입니다. 이분들의 후원 덕분에 경찰관 자녀들의 꿈이 이어질 수 있었습니다. <strong>올해도 이 명예로운 명단에 귀사의 이름을 새기세요.</strong></p>
+
+    <div class="tier-legend">
+      <div class="tier-legend-item"><span class="sponsor-tier-dot dot-platinum"></span><span id="leg1">메인 배너 스폰서</span></div>
+      <div class="tier-legend-item"><span class="sponsor-tier-dot dot-gold"></span><span id="leg2">한 페이지 스폰서</span></div>
+      <div class="tier-legend-item"><span class="sponsor-tier-dot dot-silver"></span><span id="leg3">반 페이지 스폰서</span></div>
+      <div class="tier-legend-item"><span class="sponsor-tier-dot dot-bronze"></span><span id="leg4">배너 스폰서</span></div>
+    </div>
+
+    <div class="sponsors-wall">
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-platinum"></span>Korean Daily Texas</div><div class="sponsor-biz-type" id="st1">한국일보 텍사스</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-gold"></span>Kim's Oriental Market</div><div class="sponsor-biz-type" id="st2">식료품 · 마켓</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-gold"></span>H Mart Dallas</div><div class="sponsor-biz-type" id="st3">한인 마트</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-gold"></span>Lee &amp; Associates Law</div><div class="sponsor-biz-type" id="st4">법률사무소</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-silver"></span>Hanmi Bank Dallas</div><div class="sponsor-biz-type" id="st5">한미은행</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-silver"></span>Seoul Garden Restaurant</div><div class="sponsor-biz-type" id="st6">한식 레스토랑</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-silver"></span>Park Dental Group</div><div class="sponsor-biz-type" id="st7">치과</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-silver"></span>Kang Realty Group</div><div class="sponsor-biz-type" id="st8">부동산</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-bronze"></span>Dallas Acupuncture Clinic</div><div class="sponsor-biz-type" id="st9">한의원</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-bronze"></span>Joy Travel Agency</div><div class="sponsor-biz-type" id="st10">여행사</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-bronze"></span>Korea Post Dallas</div><div class="sponsor-biz-type" id="st11">한국 우체국 서비스</div></div>
+      <div class="sponsor-entry"><div class="sponsor-biz-name"><span class="sponsor-tier-dot dot-bronze"></span>James Kim CPA</div><div class="sponsor-biz-type" id="st12">회계사무소</div></div>
+    </div>
+
+    <div class="recognition-quote">
+      <p id="r-quote">"스폰서로 참여한 이후, 지역 경찰서 관계자들과 네트워크가 생겼고 커뮤니티 안에서 우리 비즈니스에 대한 신뢰가 눈에 띄게 높아졌습니다. 단순한 광고가 아닌, 진심이 통하는 자리였습니다."</p>
+      <cite id="r-cite">— 2025 행사 스폰서 참여 업체</cite>
     </div>
   </div>
 </section>
@@ -582,86 +280,76 @@
 <!-- SPONSORSHIP -->
 <section class="sponsorship" id="sponsor">
   <div class="container">
-    <div class="section-eyebrow">스폰서십 패키지 · Sponsorship Packages</div>
-    <h2 class="section-title">당신의 브랜드를<br><em>지역 리더들 앞에</em></h2>
-    <p class="sponsor-intro">
-      행사 당일 배포되는 프로그램 북(순서지)에 귀사의 광고를 게재하세요.
-      수백 명의 경찰관, 지역 리더, 커뮤니티 구성원들이 손에 들고 행사 내내 함께하는 특별한 지면입니다.
-      <strong style="color:var(--gold2);">비즈니스 노출과 사회 공헌, 두 가지를 동시에.</strong>
-    </p>
-
+    <div class="section-eyebrow" id="sp-eyebrow">스폰서십 패키지 · Sponsorship Packages</div>
+    <h2 class="section-title" id="sp-title">당신의 브랜드를<br><em>지역 리더들 앞에</em></h2>
+    <p class="sponsor-intro" id="sp-intro">행사 당일 배포되는 프로그램 북(순서지)에 귀사의 광고를 게재하세요. 수백 명의 경찰관, 지역 리더, 커뮤니티 구성원들이 손에 들고 행사 내내 함께하는 특별한 지면입니다. <strong style="color:var(--gold2)">비즈니스 노출과 사회 공헌, 두 가지를 동시에.</strong></p>
     <div class="sponsor-tiers">
 
-      <!-- MAIN BANNER -->
       <div class="tier-card tier-platinum">
-        <div class="tier-featured">BEST VALUE</div>
+        <div class="tier-featured" id="sp-best">BEST VALUE</div>
         <div class="tier-badge">🏆 Main Banner</div>
-        <div class="tier-name">메인 배너</div>
+        <div class="tier-name" id="t1-name">메인 배너</div>
         <div class="tier-price"><span>$</span>5,000</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
-          <li>순서지 표지 또는 제1면 전체 (Full Page Cover)</li>
-          <li>행사장 내 대형 현수막 게재</li>
-          <li>사회자 구두 스폰서 소개 (3회)</li>
-          <li>소셜 미디어 및 뉴스레터 로고 노출</li>
-          <li>VIP 테이블 2석 제공</li>
-          <li>경찰서장급 지휘관과의 네트워킹 우선권</li>
-          <li>행사 사진·영상 스폰서 크레딧 표기</li>
+          <li id="t1-f1">순서지 표지 또는 제1면 전체</li>
+          <li id="t1-f2">행사장 내 대형 현수막 게재</li>
+          <li id="t1-f3">사회자 구두 스폰서 소개 (3회)</li>
+          <li id="t1-f4">소셜 미디어 및 뉴스레터 로고 노출</li>
+          <li id="t1-f5">VIP 테이블 2석 제공</li>
+          <li id="t1-f6">경찰서장급과의 네트워킹 우선권</li>
+          <li id="t1-f7">행사 사진·영상 스폰서 크레딧</li>
         </ul>
       </div>
 
-      <!-- FULL PAGE -->
       <div class="tier-card tier-gold">
         <div class="tier-badge">⭐ Full Page</div>
-        <div class="tier-name">한 페이지</div>
+        <div class="tier-name" id="t2-name">한 페이지</div>
         <div class="tier-price"><span>$</span>3,000</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
-          <li>순서지 내 전면 광고 (Full Page)</li>
-          <li>사회자 구두 스폰서 소개 (1회)</li>
-          <li>소셜 미디어 로고 노출</li>
-          <li>VIP 테이블 1석 제공</li>
-          <li>행사 후 공식 감사 서한 발송</li>
-          <li>참가 기관 네트워킹 참여</li>
+          <li id="t2-f1">순서지 내 전면 광고</li>
+          <li id="t2-f2">사회자 구두 스폰서 소개 (1회)</li>
+          <li id="t2-f3">소셜 미디어 로고 노출</li>
+          <li id="t2-f4">VIP 테이블 1석 제공</li>
+          <li id="t2-f5">공식 감사 서한 발송</li>
+          <li id="t2-f6">참가 기관 네트워킹 참여</li>
         </ul>
       </div>
 
-      <!-- HALF PAGE -->
       <div class="tier-card tier-silver">
         <div class="tier-badge">✦ Half Page</div>
-        <div class="tier-name">반 페이지</div>
+        <div class="tier-name" id="t3-name">반 페이지</div>
         <div class="tier-price"><span>$</span>1,000</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
-          <li>순서지 내 반면 광고 (Half Page)</li>
-          <li>소셜 미디어 스폰서 목록 포함</li>
-          <li>행사 참석 초청 (1인)</li>
-          <li>공식 감사 서한 발송</li>
-          <li>커뮤니티 기여 인증서 제공</li>
+          <li id="t3-f1">순서지 내 반면 광고</li>
+          <li id="t3-f2">소셜 미디어 스폰서 목록 포함</li>
+          <li id="t3-f3">행사 참석 초청 (1인)</li>
+          <li id="t3-f4">공식 감사 서한 발송</li>
+          <li id="t3-f5">커뮤니티 기여 인증서 제공</li>
         </ul>
       </div>
 
-      <!-- SMALL BANNER -->
       <div class="tier-card tier-bronze">
         <div class="tier-badge">◆ Small Banner</div>
-        <div class="tier-name">작은 배너</div>
+        <div class="tier-name" id="t4-name">작은 배너</div>
         <div class="tier-price"><span>$</span>500</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
-          <li>순서지 내 소형 배너 광고</li>
-          <li>스폰서 명단 온라인 게재</li>
-          <li>공식 감사 서한 발송</li>
-          <li>지역 사회 공헌의 자부심</li>
+          <li id="t4-f1">순서지 내 소형 배너 광고</li>
+          <li id="t4-f2">스폰서 명단 온라인 게재</li>
+          <li id="t4-f3">공식 감사 서한 발송</li>
+          <li id="t4-f4">지역 사회 공헌의 자부심</li>
         </ul>
       </div>
-
     </div>
 
-    <div style="text-align:center; margin-top:48px; padding:32px; border:1px solid rgba(201,168,76,0.2); background:rgba(201,168,76,0.04);">
-      <p style="font-size:13px; color:var(--light); line-height:1.9;">
-        📌 모든 스폰서 패키지는 <strong style="color:var(--gold2);">선착순</strong>으로 마감됩니다.<br>
-        광고 소재(이미지/로고)는 행사 2주 전까지 제출해 주세요.<br>
-        문의 및 신청: <a href="mailto:kaccnt@koreanchamber.org" style="color:var(--cyan);">kaccnt@koreanchamber.org</a>
+    <div style="text-align:center;margin-top:48px;padding:32px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.04)">
+      <p style="font-size:13px;color:var(--light);line-height:2">
+        📌 <span id="sp-note1">모든 스폰서 패키지는</span> <strong style="color:var(--gold2)" id="sp-fcs">선착순</strong><span id="sp-note2">으로 마감됩니다.</span><br>
+        <span id="sp-note3">광고 소재(이미지/로고)는 행사 2주 전까지 제출해 주세요.</span><br>
+        <span id="sp-note4">문의 및 신청:</span> <a href="mailto:kaccnt@koreanchamber.org" style="color:var(--cyan)">kaccnt@koreanchamber.org</a>
       </p>
     </div>
   </div>
@@ -670,47 +358,48 @@
 <!-- WHY SPONSOR -->
 <section class="why-section">
   <div class="container">
-    <div class="section-eyebrow">왜 참여해야 하는가</div>
-    <h2 class="section-title">스폰서십이<br><em>의미있는 이유</em></h2>
-
+    <div class="section-eyebrow" id="w-eyebrow">왜 참여해야 하는가</div>
+    <h2 class="section-title" id="w-title">스폰서십이<br><em>의미있는 이유</em></h2>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🤝</div>
-        <div class="why-title">진짜 네트워크</div>
-        <div class="why-body">5개 경찰서 지휘관, 영사관 관계자, 달라스 한인 커뮤니티 리더들과 직접 만나는 자리입니다. 이런 네트워킹 기회는 어디에서도 살 수 없습니다.</div>
+        <div class="why-title" id="w1-t">진짜 네트워크</div>
+        <div class="why-body" id="w1-b">6개 경찰서 지휘관, 영사관 관계자, 달라스 한인 커뮤니티 리더들과 직접 만나는 자리입니다. 이런 네트워킹 기회는 어디에서도 살 수 없습니다.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">📢</div>
-        <div class="why-title">브랜드 신뢰도 향상</div>
-        <div class="why-body">사회 공헌 행사와 함께하는 귀사의 브랜드는 커뮤니티의 신뢰와 호감을 자연스럽게 얻게 됩니다. 광고비가 아닌 존경으로 얻는 인지도입니다.</div>
+        <div class="why-title" id="w2-t">브랜드 신뢰도 향상</div>
+        <div class="why-body" id="w2-b">사회 공헌 행사와 함께하는 귀사의 브랜드는 커뮤니티의 신뢰와 호감을 자연스럽게 얻게 됩니다. 광고비가 아닌 존경으로 얻는 인지도입니다.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">🎓</div>
-        <div class="why-title">미래 세대에 투자</div>
-        <div class="why-body">당신의 후원금은 경찰관 자녀들의 학업을 지원합니다. 오늘의 투자가 내일의 커뮤니티를 이끌 인재를 키웁니다.</div>
+        <div class="why-title" id="w3-t">미래 세대에 투자</div>
+        <div class="why-body" id="w3-b">당신의 후원금은 경찰관 자녀들의 학업을 지원합니다. 오늘의 투자가 내일의 커뮤니티를 이끌 인재를 키웁니다.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">🌟</div>
-        <div class="why-title">18년의 전통</div>
-        <div class="why-body">2008년부터 이어온 이 행사는 달라스 한인 커뮤니티의 가장 신뢰받는 연례 행사입니다. 그 역사와 함께 귀사의 이름이 기록됩니다.</div>
+        <div class="why-title" id="w4-t">18년의 전통</div>
+        <div class="why-body" id="w4-b">2008년부터 이어온 이 행사는 달라스 한인 커뮤니티의 가장 신뢰받는 연례 행사입니다. 그 역사와 함께 귀사의 이름이 기록됩니다.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COLLABORATING PARTNERS -->
+<!-- PARTNERS -->
 <section class="partners-section">
   <div class="container">
-    <p class="partners-title">협력 기관 · Collaborating Organizations</p>
-    <div class="partners-list">
-      <div class="partner-tag">Dallas Police Department</div>
-      <div class="partner-tag">Carrollton Police Department</div>
-      <div class="partner-tag">Frisco Police Department</div>
-      <div class="partner-tag">Coppell Police Department</div>
-      <div class="partner-tag">Lewisville Police Department</div>
-      <div class="partner-tag">Consulate of Korea in Dallas</div>
-      <div class="partner-tag">Overseas Koreans Agency</div>
-      <div class="partner-tag">The Korean Society of Dallas</div>
+    <p class="partners-title" id="p-title">협력 기관 · Collaborating Organizations</p>
+    <div class="partners-grid">
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#001f5b" stroke="#c9a84c" stroke-width="2"/><polygon points="40,10 47,28 67,28 51,40 57,58 40,47 23,58 29,40 13,28 33,28" fill="#c9a84c" opacity="0.9"/><circle cx="40" cy="40" r="14" fill="#001f5b" stroke="#c9a84c" stroke-width="1.5"/><text x="40" y="37" text-anchor="middle" font-family="serif" font-size="5.5" fill="#c9a84c" font-weight="bold">DALLAS</text><text x="40" y="44" text-anchor="middle" font-family="serif" font-size="4" fill="#a0b0d0">POLICE</text></svg><div class="partner-name"><strong>Dallas</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#003087" stroke="#c9a84c" stroke-width="2"/><path d="M40,8 L55,20 L70,18 L65,33 L75,45 L60,47 L55,62 L40,55 L25,62 L20,47 L5,45 L15,33 L10,18 L25,20 Z" fill="none" stroke="#c9a84c" stroke-width="1.5"/><circle cx="40" cy="40" r="15" fill="#003087" stroke="#c9a84c" stroke-width="1.5"/><text x="40" y="36" text-anchor="middle" font-family="serif" font-size="4.5" fill="#c9a84c" font-weight="bold">CARROLLTON</text><text x="40" y="44" text-anchor="middle" font-family="serif" font-size="3.8" fill="#a0b8e0">POLICE</text></svg><div class="partner-name"><strong>Carrollton</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#1a0a3c" stroke="#c9a84c" stroke-width="2"/><path d="M40,18 L49,27 L62,25.5 L59,38 L66,47 L53.5,50.5 L49,62 L40,56 L31,62 L26.5,50.5 L14,47 L21,38 L18,25.5 L31,27 Z" fill="#2d1a5e" stroke="#c9a84c" stroke-width="1"/><text x="40" y="37" text-anchor="middle" font-family="serif" font-size="6" fill="#c9a84c" font-weight="bold">FRISCO</text><text x="40" y="46" text-anchor="middle" font-family="serif" font-size="4" fill="#b0a0d0">POLICE</text></svg><div class="partner-name"><strong>Frisco</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#0d2b4e" stroke="#c9a84c" stroke-width="2"/><rect x="16" y="16" width="48" height="48" rx="3" fill="none" stroke="#c9a84c" stroke-width="1.5" transform="rotate(45 40 40)"/><circle cx="40" cy="40" r="16" fill="#0d2b4e" stroke="#c9a84c" stroke-width="1.5"/><text x="40" y="37" text-anchor="middle" font-family="serif" font-size="5.5" fill="#c9a84c" font-weight="bold">COPPELL</text><text x="40" y="45" text-anchor="middle" font-family="serif" font-size="3.8" fill="#90b0d0">POLICE</text></svg><div class="partner-name"><strong>Coppell</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#002244" stroke="#c9a84c" stroke-width="2"/><path d="M40,10 L75,30 L75,50 L40,70 L5,50 L5,30 Z" fill="none" stroke="#c9a84c" stroke-width="1.5"/><circle cx="40" cy="40" r="15" fill="#002244" stroke="#c9a84c" stroke-width="1.5"/><text x="40" y="36" text-anchor="middle" font-family="serif" font-size="4" fill="#c9a84c" font-weight="bold">LEWISVILLE</text><text x="40" y="44" text-anchor="middle" font-family="serif" font-size="3.8" fill="#90b0d0">POLICE</text></svg><div class="partner-name"><strong>Lewisville</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#1a2a0a" stroke="#c9a84c" stroke-width="2"/><polygon points="40,9 50,25 68,20 62,38 75,50 57,52 50,68 40,56 30,68 23,52 5,50 18,38 12,20 30,25" fill="none" stroke="#6aab2e" stroke-width="1.5"/><circle cx="40" cy="40" r="15" fill="#1a2a0a" stroke="#c9a84c" stroke-width="1.5"/><text x="40" y="35" text-anchor="middle" font-family="serif" font-size="4" fill="#c9a84c" font-weight="bold">HALTOM</text><text x="40" y="42" text-anchor="middle" font-family="serif" font-size="3.8" fill="#c9a84c" font-weight="bold">CITY</text><text x="40" y="49" text-anchor="middle" font-family="serif" font-size="3.5" fill="#90b090">POLICE</text></svg><div class="partner-name"><strong>Haltom City</strong>Police Department</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#fff" stroke="#c9a84c" stroke-width="2"/><path d="M40,26 A14,14 0 0,1 40,54 A7,7 0 0,0 40,40 A7,7 0 0,1 40,26Z" fill="#cd2e3a"/><path d="M40,26 A14,14 0 0,0 40,54 A7,7 0 0,1 40,40 A7,7 0 0,0 40,26Z" fill="#003478"/><g stroke="#000" stroke-width="1.2" stroke-linecap="round"><line x1="14" y1="18" x2="22" y2="18"/><line x1="14" y1="21" x2="22" y2="21"/><line x1="14" y1="24" x2="22" y2="24"/><line x1="58" y1="18" x2="66" y2="18"/><line x1="62" y1="21" x2="66" y2="21"/><line x1="58" y1="24" x2="66" y2="24"/><line x1="14" y1="56" x2="22" y2="56"/><line x1="14" y1="59" x2="22" y2="59"/><line x1="14" y1="62" x2="22" y2="62"/><line x1="58" y1="56" x2="66" y2="56"/><line x1="58" y1="59" x2="66" y2="59"/><line x1="62" y1="62" x2="66" y2="62"/></g></svg><div class="partner-name"><strong>Consulate of Korea</strong>in Dallas</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#003478" stroke="#c9a84c" stroke-width="2"/><circle cx="40" cy="40" r="22" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1"/><ellipse cx="40" cy="40" rx="11" ry="22" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1"/><line x1="18" y1="40" x2="62" y2="40" stroke="rgba(255,255,255,.3)" stroke-width="1"/><circle cx="40" cy="40" r="8" fill="#cd2e3a" opacity=".9"/><text x="40" y="43" text-anchor="middle" font-family="sans-serif" font-size="6" fill="white" font-weight="bold">재</text><text x="40" y="68" text-anchor="middle" font-family="sans-serif" font-size="4.5" fill="#c9a84c">재외동포청</text></svg><div class="partner-name"><strong>Overseas Koreans</strong>Agency</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#8b1a1a" stroke="#c9a84c" stroke-width="2"/><g transform="translate(40,38)"><ellipse rx="7" ry="11" fill="#ff8fa0" opacity=".9" transform="rotate(0)"/><ellipse rx="7" ry="11" fill="#ff8fa0" opacity=".9" transform="rotate(72)"/><ellipse rx="7" ry="11" fill="#ff8fa0" opacity=".9" transform="rotate(144)"/><ellipse rx="7" ry="11" fill="#ff8fa0" opacity=".9" transform="rotate(216)"/><ellipse rx="7" ry="11" fill="#ff8fa0" opacity=".9" transform="rotate(288)"/><circle r="5" fill="#cd2e3a"/><circle r="2.5" fill="#fff"/></g><text x="40" y="70" text-anchor="middle" font-family="sans-serif" font-size="4" fill="#f0d080">달라스 한인회</text></svg><div class="partner-name"><strong>Korean Society</strong>of Dallas</div></div>
+      <div class="partner-card"><svg class="partner-logo" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="38" fill="#0a1628" stroke="#c9a84c" stroke-width="2.5"/><path d="M28,18 L52,18 L54,24 L58,26 L56,32 L60,38 L54,52 L44,60 L38,58 L30,62 L24,54 L22,44 L20,36 L24,28 Z" fill="rgba(201,168,76,.15)" stroke="#c9a84c" stroke-width="1"/><polygon points="40,28 42,34 48,34 43,38 45,44 40,40 35,44 37,38 32,34 38,34" fill="#c9a84c"/><text x="40" y="58" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c9a84c" letter-spacing="1">KACCNT</text></svg><div class="partner-name"><strong>KACCNT</strong>한인상공회의소</div></div>
     </div>
   </div>
 </section>
@@ -718,16 +407,14 @@
 <!-- FINAL CTA -->
 <section class="cta-final" id="contact">
   <div class="container">
-    <div class="section-eyebrow" style="color:var(--navy2);">지금 바로 참여하세요</div>
-    <h2 class="section-title">당신의 참여가<br><em style="color:var(--navy2);">변화를 만듭니다</em></h2>
-    <p>경찰관 자녀들의 꿈을 응원하고, 지역 사회에 당신의 이름을 남기세요.<br>스폰서 자리는 한정되어 있습니다.</p>
+    <div class="section-eyebrow" style="color:var(--navy2)" id="c-eyebrow">지금 바로 참여하세요</div>
+    <h2 class="section-title" id="c-title">당신의 참여가<br><em style="color:var(--navy2)">변화를 만듭니다</em></h2>
+    <p id="c-body">경찰관 자녀들의 꿈을 응원하고, 지역 사회에 당신의 이름을 남기세요.<br>스폰서 자리는 한정되어 있습니다.</p>
     <div>
-      <a href="mailto:kaccnt@koreanchamber.org?subject=18th Annual Police Award Sponsorship Inquiry" class="btn-dark">스폰서 신청하기</a>
-      <a href="https://koreanchamber.org" target="_blank" class="btn-dark" style="background:rgba(10,22,40,0.15); color:var(--navy); border:2px solid var(--navy);">KACCNT 웹사이트</a>
+      <a href="mailto:kaccnt@koreanchamber.org?subject=18th Annual Police Award Sponsorship Inquiry" class="btn-dark" id="c-btn1">스폰서 신청하기</a>
+      <a href="https://koreanchamber.org" target="_blank" class="btn-dark" style="background:rgba(10,22,40,.12);color:var(--navy);border:2px solid var(--navy)" id="c-btn2">KACCNT 웹사이트</a>
     </div>
-    <p style="margin-top:32px; font-size:13px; opacity:0.7;">
-      📅 June 11, 2026 &nbsp;·&nbsp; 🕙 11:00 AM &nbsp;·&nbsp; 📍 Sura Korean Restaurant, Dallas TX
-    </p>
+    <p style="margin-top:32px;font-size:13px;opacity:.7">📅 June 11, 2026 &nbsp;·&nbsp; 🕙 11:00 AM &nbsp;·&nbsp; 📍 Sura Korean Restaurant, Dallas TX</p>
   </div>
 </section>
 
@@ -735,17 +422,116 @@
 <footer>
   <div class="logo-text">KACCNT · Since 2008</div>
   <p>Korean American Chamber of Commerce North Texas<br>
-  2240 Royal Ln #106, Dallas, TX 75229<br>
-  <a href="mailto:kaccnt@koreanchamber.org" style="color:var(--gold); text-decoration:none;">kaccnt@koreanchamber.org</a>
-  &nbsp;·&nbsp;
-  <a href="https://koreanchamber.org" style="color:var(--gold); text-decoration:none;">koreanchamber.org</a></p>
-  <p style="margin-top:16px; font-size:11px;">© 2026 Korean American Chamber of Commerce North Texas. All rights reserved.</p>
+  2828 E Trinity Mills Rd. #340, Carrollton, TX 75006<br>
+  <a href="mailto:kaccnt@koreanchamber.org">kaccnt@koreanchamber.org</a> &nbsp;·&nbsp;
+  <a href="https://koreanchamber.org" target="_blank">koreanchamber.org</a></p>
+  <p style="margin-top:16px;font-size:11px;opacity:.4">© 2026 Korean American Chamber of Commerce North Texas. All rights reserved.</p>
 </footer>
 
 <script>
-// Smooth scroll nav active state
+// ── TRANSLATIONS ──
+const T = {
+  ko: {
+    'nav-logo':'KACCNT · 제18회 경찰관 시상식',
+    'nav-mission':'행사소개','nav-video':'작년영상','nav-recognition':'역대스폰서','nav-sponsor':'스폰서','nav-contact':'문의',
+    'h-date-label':'날짜 · Date','h-venue-label':'장소 · Venue',
+    'h-cta1':'스폰서 참여하기','h-cta2':'작년 행사 보기',
+    'm-eyebrow':'우리의 사명 · Our Mission',
+    'm-title':'지역 사회를<br><em>지키는 이들을</em><br>위하여',
+    'm-p1':'북텍사스 한인상공회의소(KACCNT)는 지역 사회의 안전을 위해 헌신하는 경찰관들에게 감사를 전하고, <strong>그들의 자녀들에게 장학금을 수여</strong>하기 위해 매년 이 행사를 개최합니다.',
+    'm-p2':'제18회를 맞이하는 올해 행사는 Dallas, Carrollton, Frisco, Coppell, Lewisville, Haltom City 경찰서와 함께 진행되며, 한인 커뮤니티와 법 집행 기관 사이의 <strong>특별한 연대</strong>를 이어갑니다.',
+    'm-p3':'스폰서로 참여하시면 단순한 기부를 넘어, 당신의 비즈니스를 <strong>수백 명의 지역 리더와 경찰 지휘관 앞에 직접 소개</strong>하는 기회를 갖게 됩니다.',
+    's1':'Years of Service','s2':'협력 경찰서','s3':'예상 참석자','s4':'커뮤니티 임팩트',
+    'v-title':'작년 행사를<br><em>직접 확인하세요</em>',
+    'v-body':'제17회 행사의 감동적인 순간들 — 수상의 기쁨, 장학금 전달, 그리고<br>한인 커뮤니티와 경찰이 함께 만들어낸 따뜻한 연대의 현장을 담았습니다.',
+    'v-link-pre':'전체 행사 내용은','v-link-post':'에서도 확인하실 수 있습니다',
+    'r-eyebrow':'함께해주신 분들 · Past Sponsors',
+    'r-title':'이분들이 먼저<br><em>함께하셨습니다</em>',
+    'r-intro':'지난 행사에서 스폰서로 참여해 주신 기업과 개인들입니다. 이분들의 후원 덕분에 경찰관 자녀들의 꿈이 이어질 수 있었습니다. <strong>올해도 이 명예로운 명단에 귀사의 이름을 새기세요.</strong>',
+    'leg1':'메인 배너 스폰서','leg2':'한 페이지 스폰서','leg3':'반 페이지 스폰서','leg4':'배너 스폰서',
+    'st1':'한국일보 텍사스','st2':'식료품 · 마켓','st3':'한인 마트','st4':'법률사무소','st5':'한미은행','st6':'한식 레스토랑','st7':'치과','st8':'부동산','st9':'한의원','st10':'여행사','st11':'한국 우체국 서비스','st12':'회계사무소',
+    'r-quote':'"스폰서로 참여한 이후, 지역 경찰서 관계자들과 네트워크가 생겼고 커뮤니티 안에서 우리 비즈니스에 대한 신뢰가 눈에 띄게 높아졌습니다. 단순한 광고가 아닌, 진심이 통하는 자리였습니다."',
+    'r-cite':'— 2025 행사 스폰서 참여 업체',
+    'sp-eyebrow':'스폰서십 패키지 · Sponsorship Packages',
+    'sp-title':'당신의 브랜드를<br><em>지역 리더들 앞에</em>',
+    'sp-intro':'행사 당일 배포되는 프로그램 북(순서지)에 귀사의 광고를 게재하세요. 수백 명의 경찰관, 지역 리더, 커뮤니티 구성원들이 손에 들고 행사 내내 함께하는 특별한 지면입니다. <strong style="color:var(--gold2)">비즈니스 노출과 사회 공헌, 두 가지를 동시에.</strong>',
+    'sp-best':'BEST VALUE',
+    't1-name':'메인 배너','t1-f1':'순서지 표지 또는 제1면 전체','t1-f2':'행사장 내 대형 현수막 게재','t1-f3':'사회자 구두 스폰서 소개 (3회)','t1-f4':'소셜 미디어 및 뉴스레터 로고 노출','t1-f5':'VIP 테이블 2석 제공','t1-f6':'경찰서장급과의 네트워킹 우선권','t1-f7':'행사 사진·영상 스폰서 크레딧',
+    't2-name':'한 페이지','t2-f1':'순서지 내 전면 광고','t2-f2':'사회자 구두 스폰서 소개 (1회)','t2-f3':'소셜 미디어 로고 노출','t2-f4':'VIP 테이블 1석 제공','t2-f5':'공식 감사 서한 발송','t2-f6':'참가 기관 네트워킹 참여',
+    't3-name':'반 페이지','t3-f1':'순서지 내 반면 광고','t3-f2':'소셜 미디어 스폰서 목록 포함','t3-f3':'행사 참석 초청 (1인)','t3-f4':'공식 감사 서한 발송','t3-f5':'커뮤니티 기여 인증서 제공',
+    't4-name':'작은 배너','t4-f1':'순서지 내 소형 배너 광고','t4-f2':'스폰서 명단 온라인 게재','t4-f3':'공식 감사 서한 발송','t4-f4':'지역 사회 공헌의 자부심',
+    'sp-note1':'모든 스폰서 패키지는','sp-fcs':'선착순','sp-note2':'으로 마감됩니다.','sp-note3':'광고 소재(이미지/로고)는 행사 2주 전까지 제출해 주세요.','sp-note4':'문의 및 신청:',
+    'w-eyebrow':'왜 참여해야 하는가','w-title':'스폰서십이<br><em>의미있는 이유</em>',
+    'w1-t':'진짜 네트워크','w1-b':'6개 경찰서 지휘관, 영사관 관계자, 달라스 한인 커뮤니티 리더들과 직접 만나는 자리입니다. 이런 네트워킹 기회는 어디에서도 살 수 없습니다.',
+    'w2-t':'브랜드 신뢰도 향상','w2-b':'사회 공헌 행사와 함께하는 귀사의 브랜드는 커뮤니티의 신뢰와 호감을 자연스럽게 얻게 됩니다. 광고비가 아닌 존경으로 얻는 인지도입니다.',
+    'w3-t':'미래 세대에 투자','w3-b':'당신의 후원금은 경찰관 자녀들의 학업을 지원합니다. 오늘의 투자가 내일의 커뮤니티를 이끌 인재를 키웁니다.',
+    'w4-t':'18년의 전통','w4-b':'2008년부터 이어온 이 행사는 달라스 한인 커뮤니티의 가장 신뢰받는 연례 행사입니다. 그 역사와 함께 귀사의 이름이 기록됩니다.',
+    'p-title':'협력 기관 · Collaborating Organizations',
+    'c-eyebrow':'지금 바로 참여하세요','c-title':'당신의 참여가<br><em style="color:var(--navy2)">변화를 만듭니다</em>',
+    'c-body':'경찰관 자녀들의 꿈을 응원하고, 지역 사회에 당신의 이름을 남기세요.<br>스폰서 자리는 한정되어 있습니다.',
+    'c-btn1':'스폰서 신청하기','c-btn2':'KACCNT 웹사이트'
+  },
+  en: {
+    'nav-logo':'KACCNT · 18th Police Award',
+    'nav-mission':'About','nav-video':'Video','nav-recognition':'Past Sponsors','nav-sponsor':'Sponsor','nav-contact':'Contact',
+    'h-date-label':'Date','h-venue-label':'Venue',
+    'h-cta1':'Become a Sponsor','h-cta2':'Watch Last Year',
+    'm-eyebrow':'Our Mission',
+    'm-title':'Honoring Those<br>Who <em>Protect</em><br>Our Community',
+    'm-p1':'The Korean American Chamber of Commerce of North Texas (KACCNT) hosts this annual ceremony to express gratitude to police officers dedicated to community safety, and to <strong>award scholarships to their children</strong>.',
+    'm-p2':'Now in its 18th year, this event is held in collaboration with Dallas, Carrollton, Frisco, Coppell, Lewisville, and Haltom City Police Departments — continuing a <strong>unique bond</strong> between the Korean American community and law enforcement.',
+    'm-p3':'As a sponsor, you go beyond a donation — your business gets <strong>direct visibility in front of hundreds of community leaders and police command staff</strong>.',
+    's1':'Years of Service','s2':'Police Departments','s3':'Expected Attendees','s4':'Community Impact',
+    'v-title':'See Last Year\'s<br><em>Ceremony</em>',
+    'v-body':'Relive the touching moments of the 17th Annual Ceremony — award presentations, scholarship recipients,<br>and the warm unity between the Korean American community and local law enforcement.',
+    'v-link-pre':'Full event details at','v-link-post':'',
+    'r-eyebrow':'Past Sponsors · Wall of Honor',
+    'r-title':'They Led the Way.<br><em>Will You Join Them?</em>',
+    'r-intro':'These businesses and individuals made last year\'s ceremony possible. Thanks to their generous support, scholarships were awarded to the children of our police officers. <strong>This year, add your name to this honored list.</strong>',
+    'leg1':'Main Banner Sponsor','leg2':'Full Page Sponsor','leg3':'Half Page Sponsor','leg4':'Banner Sponsor',
+    'st1':'Korean Newspaper','st2':'Grocery · Market','st3':'Korean Supermarket','st4':'Law Firm','st5':'Korean American Bank','st6':'Korean Restaurant','st7':'Dental Clinic','st8':'Real Estate','st9':'Acupuncture Clinic','st10':'Travel Agency','st11':'Postal Service','st12':'Accounting Firm',
+    'r-quote':'"After sponsoring, we built real connections with local police command staff. Our business gained genuine trust within the community — this was not just advertising, it was meaningful presence."',
+    'r-cite':'— 2025 Event Sponsor',
+    'sp-eyebrow':'Sponsorship Packages',
+    'sp-title':'Put Your Brand<br><em>Before Local Leaders</em>',
+    'sp-intro':'Place your advertisement in the official event program book, distributed to hundreds of police officers, community leaders, and attendees on the day of the event. <strong style="color:var(--gold2)">Business visibility and community contribution — both at once.</strong>',
+    'sp-best':'BEST VALUE',
+    't1-name':'Main Banner','t1-f1':'Full Page Cover (front or page 1 of program)','t1-f2':'Large banner display at venue','t1-f3':'MC verbal sponsor introduction (3×)','t1-f4':'Logo on social media & newsletter','t1-f5':'2 VIP table seats','t1-f6':'Priority networking with police command staff','t1-f7':'Sponsor credit in event photos & video',
+    't2-name':'Full Page','t2-f1':'Full page ad in program book','t2-f2':'MC verbal sponsor introduction (1×)','t2-f3':'Logo on social media','t2-f4':'1 VIP table seat','t2-f5':'Official letter of appreciation','t2-f6':'Networking with partner organizations',
+    't3-name':'Half Page','t3-f1':'Half page ad in program book','t3-f2':'Listed in social media sponsors','t3-f3':'1 event admission','t3-f4':'Official letter of appreciation','t3-f5':'Community contribution certificate',
+    't4-name':'Small Banner','t4-f1':'Small banner ad in program book','t4-f2':'Name listed on official website','t4-f3':'Official letter of appreciation','t4-f4':'Pride of community contribution',
+    'sp-note1':'All sponsorship packages are','sp-fcs':'first-come, first-served','sp-note2':'.','sp-note3':'Ad materials (image/logo) must be submitted 2 weeks before the event.','sp-note4':'Inquiries:',
+    'w-eyebrow':'Why Sponsor','w-title':'Why Your<br><em>Sponsorship Matters</em>',
+    'w1-t':'Real Connections','w1-b':'Meet police command staff from 6 departments, consulate officials, and Korean American community leaders. This kind of networking opportunity simply cannot be found elsewhere.',
+    'w2-t':'Brand Trust & Credibility','w2-b':'Your brand aligned with this meaningful cause earns community trust and goodwill naturally — recognition earned through respect, not just ad spend.',
+    'w3-t':'Invest in the Future','w3-b':'Your sponsorship directly funds scholarships for children of police officers — investing in the next generation of community leaders.',
+    'w4-t':'18 Years of Legacy','w4-b':'Running since 2008, this is the most trusted annual event in the Dallas Korean American community. Your name becomes part of that storied legacy.',
+    'p-title':'Collaborating Organizations',
+    'c-eyebrow':'Join Us Today','c-title':'Your Support<br><em style="color:var(--navy2)">Creates Change</em>',
+    'c-body':'Support the dreams of police officers\' children and leave your mark in the community.<br>Sponsorship spots are limited.',
+    'c-btn1':'Apply for Sponsorship','c-btn2':'KACCNT Website'
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.title = lang === 'ko' ? '제18회 경찰관 시상식 & 장학금 | KACCNT' : '18th Annual Outstanding Police Award | KACCNT';
+  document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  const dict = T[lang];
+  Object.keys(dict).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = dict[id];
+  });
+  try { window.history.pushState({}, '', lang === 'ko' ? '/kaccnt' : '/kaccnt/us'); } catch(e) {}
+}
+
+// Auto-detect from URL path
+if (window.location.pathname.includes('/us')) setLang('en');
+
+// Nav scroll highlight
 const sections = document.querySelectorAll('section[id]');
-const observer = new IntersectionObserver(entries => {
+const navObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       document.querySelectorAll('.nav-links a').forEach(a => {
@@ -754,23 +540,20 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.4 });
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => navObs.observe(s));
 
-// Animate stats on scroll
-const statNums = document.querySelectorAll('.stat-num');
-const statsObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.3 });
-statNums.forEach(n => {
-  n.style.opacity = '0';
-  n.style.transform = 'translateY(20px)';
-  n.style.transition = 'opacity 0.6s, transform 0.6s';
-  statsObserver.observe(n);
+// Stat number fade-in
+document.querySelectorAll('.stat-num').forEach(n => {
+  n.style.cssText = 'opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s';
+  new IntersectionObserver(([e]) => { if (e.isIntersecting) { n.style.opacity='1'; n.style.transform='translateY(0)'; } }, { threshold: 0.3 }).observe(n);
+});
+
+// Sponsor wall staggered fade-in
+document.querySelectorAll('.sponsor-entry').forEach((el, i) => {
+  el.style.cssText = 'opacity:0;transform:translateY(14px);transition:opacity .45s,transform .45s,background .3s,border-color .3s';
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, i * 55);
+  }, { threshold: 0.08 }).observe(el);
 });
 </script>
 </body>
